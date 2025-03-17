@@ -1,0 +1,44 @@
+#! /bin/bash
+#SBATCH -J srad_v1-rodinia-3.1-100_0_5_502_458.gpgpu-sim_git-commit-5dfe02580f182452d1c4a9cbad9aa5480d98ca32_modified_683.0
+#SBATCH --threads-per-core=1
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --mem-per-cpu=4G
+#SBACTH --time=200:00:00,
+#SBATCH -p batch
+#SBATCH --mail-type=END,FAIL
+#SBATCH --export=ALL
+#SBATCH --output=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/srad_v1-rodinia-3.1/100_0_5_502_458/QV100-PTX-1B_INSN/srad_v1-rodinia-3.1-100_0_5_502_458.gpgpu-sim_git-commit-5dfe02580f182452d1c4a9cbad9aa5480d98ca32_modified_683.0.o%j
+#SBATCH --error=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/srad_v1-rodinia-3.1/100_0_5_502_458/QV100-PTX-1B_INSN/srad_v1-rodinia-3.1-100_0_5_502_458.gpgpu-sim_git-commit-5dfe02580f182452d1c4a9cbad9aa5480d98ca32_modified_683.0.e%j
+
+set -e
+
+if [ "1" != "1" ]; then
+    export GPGPUSIM_ROOT=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim
+    source /home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/setup_environment
+else
+    echo "Skipping setup_environment - already set"
+fi
+
+echo "doing: export -n PTX_SIM_USE_PTX_FILE"
+export -n PTX_SIM_USE_PTX_FILE
+echo "doing: export LD_LIBRARY_PATH=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/gpgpu-sim-builds/gpgpu-sim_git-commit-5dfe02580f182452d1c4a9cbad9aa5480d98ca32_modified_683.0:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/lib/gcc-8.3.0/cuda-9010/release:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/lib/gcc-8.3.0/cuda-9010/release:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/lib/gcc-8.3.0/cuda-9010/release:/package/gcc/8.3.0/lib64:"
+export LD_LIBRARY_PATH=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/gpgpu-sim-builds/gpgpu-sim_git-commit-5dfe02580f182452d1c4a9cbad9aa5480d98ca32_modified_683.0:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/lib/gcc-8.3.0/cuda-9010/release:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/lib/gcc-8.3.0/cuda-9010/release:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/lib/gcc-8.3.0/cuda-9010/release:/package/gcc/8.3.0/lib64:
+echo "doing: cd /home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/srad_v1-rodinia-3.1/100_0_5_502_458/QV100-PTX-1B_INSN"
+cd /home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/srad_v1-rodinia-3.1/100_0_5_502_458/QV100-PTX-1B_INSN
+echo "doing: export OPENCL_CURRENT_TEST_PATH=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/srad_v1-rodinia-3.1/100_0_5_502_458/QV100-PTX-1B_INSN"
+export OPENCL_CURRENT_TEST_PATH=/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/srad_v1-rodinia-3.1/100_0_5_502_458/QV100-PTX-1B_INSN
+echo "doing: export OPENCL_REMOTE_GPU_HOST=REPLACE_REMOTE_HOST"
+export OPENCL_REMOTE_GPU_HOST=REPLACE_REMOTE_HOST
+echo "doing "
+
+echo "doing: export PATH=/home/min/a/ee695paa/cuda/bin:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/bin:/home/min/a/ee695paa/cuda/bin:/home/min/a/ee695paa/cuda/bin:/package/gcc/8.3.0/bin:/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:."
+export PATH=/home/min/a/ee695paa/cuda/bin:/home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/gpu-simulator/gpgpu-sim/bin:/home/min/a/ee695paa/cuda/bin:/home/min/a/ee695paa/cuda/bin:/package/gcc/8.3.0/bin:/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:.
+
+# Uncomment to force blocking torque launches
+echo "doing export CUDA_LAUNCH_BLOCKING=1"
+export CUDA_LAUNCH_BLOCKING=1
+
+
+echo "doing:  /home/min/a/ee695paa/github/gpu-app-collection/src/..//bin/9.1/release/srad_v1-rodinia-3.1 100 0.5 502 458"
+ /home/min/a/ee695paa/github/gpu-app-collection/src/..//bin/9.1/release/srad_v1-rodinia-3.1 100 0.5 502 458

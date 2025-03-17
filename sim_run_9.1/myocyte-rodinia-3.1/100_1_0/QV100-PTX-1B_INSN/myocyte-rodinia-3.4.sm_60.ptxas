@@ -1,0 +1,9 @@
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z8solver_2iiPfS_S_S_S_S_S_S_S_' for 'sm_60'
+ptxas info    : Function properties for _Z8solver_2iiPfS_S_S_S_S_S_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 119 registers, 400 bytes cmem[0], 1548 bytes cmem[2]
+ptxas info    : Compiling entry function '_Z6kerneliPfS_S_S_' for 'sm_60'
+ptxas info    : Function properties for _Z6kerneliPfS_S_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 90 registers, 360 bytes cmem[0], 1288 bytes cmem[2]
