@@ -1,0 +1,1 @@
+ /home/min/a/devlinc/Documents/ECE60827/hardware-sim-assgn-1/util/job_launching/../../sim_run_9.1/gpgpu-sim-builds/accelsim-commit-5dfe02580f182452d1c4a9cbad9aa5480d98ca32_modified_683.0/accel-sim.out  -config ./gpgpusim.config -trace ./traces/kernelslist.g
